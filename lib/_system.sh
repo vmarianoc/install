@@ -175,18 +175,25 @@ system_puppeteer_dependencies() {
                       lsb-release \
                       xdg-utils
 EOF
-
-  sleep 2
-sudo su - root <<EOF
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-EOF
-  sleep 2
-sudo su - root <<EOF
-apt install ./google-chrome-stable_current_amd64.deb
-EOF
   sleep 2
 }
+#######################################
+# instalação chrome
+# Arguments:
+#   None
+#######################################
+system_chrome() {
+  print_banner
+  printf "${WHITE} 💻 Instalando Chrome...${GRAY_LIGHT}"
+  printf "\n\n"
 
+  sleep 2
+sudo su - root <<EOF
+cd
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+apt install ./google-chrome-stable_current_amd64.deb -y
+EOF
+}
 #######################################
 # installs pm2
 # Arguments:
