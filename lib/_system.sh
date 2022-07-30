@@ -173,10 +173,17 @@ system_puppeteer_dependencies() {
                       libappindicator1 \
                       libnss3 \
                       lsb-release \
-                      xdg-utils \
-                      docker-compose
+                      xdg-utils
 EOF
 
+  sleep 2
+sudo su - root <<EOF
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+EOF
+  sleep 2
+sudo su - root <<EOF
+apt install ./google-chrome-stable_current_amd64.deb
+EOF
   sleep 2
 }
 
