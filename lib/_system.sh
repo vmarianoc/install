@@ -74,7 +74,7 @@ system_node_install() {
   sleep 2
 
   sudo su - root <<EOF
-  curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+  curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
   apt-get install -y nodejs
   sleep 2
   npm install -g npm@latest
@@ -178,23 +178,6 @@ EOF
   sleep 2
 }
 #######################################
-# instalação chrome
-# Arguments:
-#   None
-#######################################
-system_chrome() {
-  print_banner
-  printf "${WHITE} 💻 Instalando Chrome...${GRAY_LIGHT}"
-  printf "\n\n"
-
-  sleep 2
-sudo su - root <<EOF
-cd
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-apt install ./google-chrome-stable_current_amd64.deb -y
-EOF
-}
-#######################################
 # installs pm2
 # Arguments:
 #   None
@@ -231,6 +214,10 @@ system_snapd_install() {
   apt install -y snapd
   snap install core
   snap refresh core
+  sleep 2
+  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  sleep 2
+  apt install -y ./google-chrome-stable_current_amd64.deb -y
 EOF
 
   sleep 2
