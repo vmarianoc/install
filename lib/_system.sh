@@ -29,14 +29,14 @@ EOF
 #######################################
 system_git_clone() {
   print_banner
-  printf "${WHITE} 💻 Fazendo download do código Press Ticket...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Fazendo download do código...${GRAY_LIGHT}"
   printf "\n\n"
 
 
   sleep 2
 
   sudo su - deploy <<EOF
-  git clone https://github.com/rtenorioh/Press-Ticket  /home/deploy/${instancia_add}/
+  git clone https://github.com/vmarianoc/ticket  /home/deploy/${instancia_add}/
 EOF
 
   sleep 2
@@ -49,7 +49,7 @@ EOF
 #######################################
 system_update() {
   print_banner
-  printf "${WHITE} 💻 Vamos atualizar o sistema Press Ticket...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Vamos atualizar o sistema...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
